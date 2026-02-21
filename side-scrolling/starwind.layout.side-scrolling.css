@@ -1,0 +1,18 @@
+@layer starwind.layout {
+    :where(sw-side-scrolling) {
+        display: flex;
+        gap: var(
+            --sw-side-scrolling-gap,
+            var(--sw-gap, var(--sw-space-s-m, 1rem))
+        );
+        overflow-x: auto;
+        overscroll-behavior-x: contain;
+        -webkit-overflow-scrolling: touch;
+        padding-block: var(--sw-side-scrolling-pad-block, 0);
+    }
+
+    :where(sw-side-scrolling) > :where(*) {
+        flex: 0 0 var(--sw-side-scrolling-item, auto);
+        min-inline-size: 0;
+    }
+}
